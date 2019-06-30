@@ -1,0 +1,46 @@
+@import '@/assets/fonts/Industry.sass'
+  
+.pro-form
+  input
+    padding: 19px 15px 15px
+    font-family: 'Times New Roman'
+    font-size: 1.1em
+    border: 1px white solid
+    &.error
+      border-color: red
+    &:focus
+      outline: none
+  .form-row
+    display: grid
+    margin-bottom: 10px
+    &.has-2
+      grid-template-columns: auto 10px auto
+    input
+      width: 100%
+      box-sizing: border-box
+
+
+.pfa-a
+  text-decoration: none
+
+.pfa-button
+  @extend .pfa-industry
+  border: 2px $pfa-dark-blue solid
+  color: $pfa-dark-blue
+  box-sizing: border-box
+  display: grid
+  justify-items: center
+  align-items: center
+  cursor: pointer
+  transition: all .5s
+  user-select: none
+  width: fit-content
+  min-width: 230px
+  padding: 19px 50px 16px
+  text-decoration: none
+  &:hover
+    background-color: $pfa-dark-blue
+    &.bg-yellow
+      color: $pfa-yellow
+    &.bg-light-blue
+      color: $pfa-light-blue
