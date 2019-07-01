@@ -18,3 +18,23 @@
 [debug] [2019-07-01T02:01:19.130Z] <<< HTTP RESPONSE 200
 [debug] [2019-07-01T02:01:19.132Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/pfa-joshua  
  
+[debug] [2019-07-01T02:01:36.130Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'pfa-joshua'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-07-01T02:01:36.134Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/pfa-joshua/versions  
+
+[debug] [2019-07-01T02:04:50.356Z] ----------------------------------------------------------------------
+[debug] [2019-07-01T02:04:50.358Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-07-01T02:04:50.358Z] CLI Version:   6.8.0
+[debug] [2019-07-01T02:04:50.359Z] Platform:      darwin
+[debug] [2019-07-01T02:04:50.359Z] Node Version:  v8.11.3
+[debug] [2019-07-01T02:04:50.359Z] Time:          Sun Jun 30 2019 20:04:50 GMT-0600 (MDT)
+[debug] [2019-07-01T02:04:50.359Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-01T02:04:50.368Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-01T02:04:50.368Z] > authorizing via signed-in user
+[debug] [2019-07-01T02:04:50.368Z] [iam] checking project pfa-joshua for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-07-01T02:04:50.370Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/pfa-joshua:testIamPermissions  
+

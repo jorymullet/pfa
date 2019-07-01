@@ -116,7 +116,7 @@ export default {
   @import 'transitions'
   .campaign-footer-main
     .campaign-footer-container
-      padding: 94px 0 50px
+      padding: 94px 0 105px
       .content
         padding: 0 15px
         margin: 0 auto
