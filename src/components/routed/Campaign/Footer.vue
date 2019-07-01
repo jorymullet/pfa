@@ -130,6 +130,9 @@ export default {
               display: block
               color: $pfa-peach
               font-size: 1.4em
+              transition: .25s all
+              &:hover
+                color: $pfa-yellow
           .social-media-links
             .link
               display: inline-block

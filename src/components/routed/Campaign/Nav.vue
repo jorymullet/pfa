@@ -15,6 +15,7 @@ export default {
   methods: {
     startTopListener () {
       document.addEventListener('scroll', e => {
+        console.log(window.scrollY, this.lastScrollY)
         const movingDownQuickly = window.scrollY - this.lastScrollY > 0
         this.seeNav = !movingDownQuickly
         this.lastScrollY = window.scrollY

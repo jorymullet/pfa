@@ -99,6 +99,8 @@ export default {
   @import 'vars'
   @import 'common'
   .fresh-start-main
+    position: relative
+    z-index: 2
     .fresh-start-container
       height: 100vh
       background-color: $pfa-dark-blue

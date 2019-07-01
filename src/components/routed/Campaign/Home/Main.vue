@@ -37,4 +37,5 @@ export default {
   .home-main-main
     .home-main-container
       height: 110vh
+      overflow-x: hidden
 </style>
