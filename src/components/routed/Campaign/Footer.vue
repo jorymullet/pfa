@@ -66,12 +66,6 @@ export default {
       ],
     }
   },
-  methods: {
-    hovering (icon, isHovering) {
-      const idx = this.socialMediaLinks.findIndex(link => link.icon === icon)
-      this.socialMediaLinks[idx].hovered = isHovering
-    },
-  },
 }
 </script>
 
@@ -88,55 +82,17 @@ export default {
             ) {{link.name}}
           .social-media-links
             a.link(
-              href='http://google.com'
-              target='_blank'
-            )
-            a.link(
-              v-for='(link, idx) in socialMediaLinks'
+              v-for='(link, socialIdx) in socialMediaLinks'
               :href='link.to'
               target='_blank'
             )
               .link-box(
-                @mouseover='hovering(link.icon, true)'
-                @mouseleave='hovering(link.icon, false)'
+                @mouseover='socialMediaLinks[socialIdx].hovered = true'
+                @mouseleave='socialMediaLinks[socialIdx].hovered = false'
               )
                 .image.dead-center(
-                  v-if='link.icon === "instagram"'
+                  :style="{backgroundImage: 'url(' + require(`../../../assets/img/${link.icon}-${link.hovered ? 'dark-blue' : 'yellow'}.svg`) + ')'}"
                 )
-                  transition(
-                    name='fade'
-                    mode='out-in'
-                  )
-                    img(
-                      v-if='!socialMediaLinks[idx].hovered'
-                      src='../../../assets/img/instagram-yellow.svg'
-                    )
-                    img(
-                      v-else
-                      src='../../../assets/img/instagram-dark-blue.svg'
-                    )
-                .image.dead-center(
-                  v-if='link.icon === "facebook"'
-                )
-                  img(
-                    v-if='!socialMediaLinks[idx].hovered'
-                    src='../../../assets/img/facebook-yellow.svg'
-                  )
-                  img(
-                    v-else
-                    src='../../../assets/img/facebook-dark-blue.svg'
-                  )
-                .image.dead-center(
-                  v-if='link.icon === "twitter"'
-                )
-                  img(
-                    v-if='!socialMediaLinks[idx].hovered'
-                    src='../../../assets/img/twitter-yellow.svg'
-                  )
-                  img(
-                    v-else
-                    src='../../../assets/img/twitter-dark-blue.svg'
-                  )
         .misc
           .misc-links
             a.pfa-a.misc-link(
@@ -149,6 +105,10 @@ export default {
           )
             .pfa-button.paid-for.pfa-aktiv PAID FOR BY PETE FOR AMERICA
         .emblem
+          .image.x-align
+            img(
+              src='../../../assets/img/pete-for-president.svg'
+            )
 </template>
 
 <style lang="sass" scoped>
@@ -186,6 +146,9 @@ export default {
                 .image
                   width: 30px
                   height: 30px
+                  transition: all .25s
+                  background-repeat: no-repeat
+                  background-position: 50% 50%
                   > img
                     width: 100%
                     height: 100%
@@ -195,6 +158,7 @@ export default {
             .misc-link
               color: $pfa-peach
               line-height: 1.8
+              width: fit-content
               &:hover
                 text-decoration: underline
           .navy-disclaimer
@@ -209,4 +173,9 @@ export default {
             &:hover
               background-color: $pfa-peach
               color: $pfa-dark-blue
+        .emblem
+          .image
+            width: 242px
+            > img
+              width: 100%
 </style>
